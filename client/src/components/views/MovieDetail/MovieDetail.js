@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../Config';
 import { Row } from 'antd';
 import MainImage from '../LandingPage/Sections/MainImage';
+import Favorite from './Sections/Favorite';
 import MovieInfo from './Sections/MovieInfo';
 import GridCards from '../commons/GridCards';
 
@@ -44,6 +45,14 @@ function MovieDetail(props) {
 
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto' }}>
+                {/* Favorite Button : 좋아요 버튼 */}
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Favorite 
+                        movieInfo={Movie} 
+                        movieId={movieId} 
+                        userForm={localStorage.getItem('userId')}/>
+                </div>
+
                 {/* Movie Info : 영화 정보 출력 (표) */}
                 <MovieInfo movie={Movie} />
                 <br />
