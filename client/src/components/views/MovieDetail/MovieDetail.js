@@ -50,7 +50,7 @@ function MovieDetail(props) {
                     <Favorite 
                         movieInfo={Movie} 
                         movieId={movieId} 
-                        userForm={localStorage.getItem('userId')}/>
+                        userFrom={localStorage.getItem('userId')}/>
                 </div>
 
                 {/* Movie Info : 영화 정보 출력 (표) */}
